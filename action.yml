@@ -27,7 +27,7 @@ runs:
       shell: bash
       run: |
         set +e
-        ${{github.action_path}}/bin/ubuntu/mgba-rom-test -S ${{ inputs.swi-call }} -R ${{ inputs.read-register }} -C hardware=1 ${{ inputs.rom-path }}
+        ${{github.action_path}}/bin/ubuntu/mgba-rom-test -S ${{ inputs.swi-call }} -R ${{ inputs.read-register }} ${{ inputs.rom-path }}
         rom_test_exitcode=$?
         set -e
         echo "name=exitcode::$rom_test_exitcode" >> $GITHUB_OUTPUT
